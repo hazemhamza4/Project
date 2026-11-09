@@ -1,0 +1,53 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="puzzle_piece">
+    <static>false</static>
+    <link name="piece_link">
+      <inertial>
+        <mass>0.05</mass>
+        <inertia>
+          <ixx>0.00001</ixx>
+          <ixy>0.0</ixy>
+          <ixz>0.0</ixz>
+          <iyy>0.00001</iyy>
+          <iyz>0.0</iyz>
+          <izz>0.00001</izz>
+        </inertia>
+      </inertial>
+      <collision name="piece_collision">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.01</size>
+          </box>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>1.2</mu>
+              <mu2>1.2</mu2>
+              <slip1>0.0</slip1>
+              <slip2>0.0</slip2>
+            </ode>
+          </friction>
+          <contact>
+            <ode>
+              <kp>100000.0</kp>
+              <kd>1.0</kd>
+            </ode>
+          </contact>
+        </surface>
+      </collision>
+      <visual name="piece_visual">
+        <geometry>
+          <box>
+            <size>0.05 0.05 0.01</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.9 0.1 0.1 1.0</ambient>
+          <diffuse>0.9 0.1 0.1 1.0</diffuse>
+        </material>
+      </visual>
+    </link>
+  </model>
+</sdf>
